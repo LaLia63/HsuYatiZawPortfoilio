@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --bg: #020B14;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --neon-cyan: #00E6FF;
+  --neon-pink: #ff2bd6;
+  --neon-purple: #7c3aed;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --muted: #8AA0B6;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 230, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 43, 214, 0.06), transparent 40%),
+    linear-gradient(to bottom, #020B14, #020B14);
+
+  overflow-x: hidden;
+
+  font-family: var(--font-inter), sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: 0.05em;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+.neon {
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 6px var(--neon-cyan),
+    0 0 12px var(--neon-cyan),
+    0 0 24px rgba(0, 230, 255, 0.6);
+}
+
+strong,
+b {
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 6px var(--neon-cyan),
+    0 0 12px rgba(0, 230, 255, 0.4);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 230, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 230, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 2px,
+      transparent 4px);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: var(--neon-cyan);
+  color: #001018;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00E6FF #020B14;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020B14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00E6FF, #ff2bd6);
+  border-radius: 10px;
+  border: 2px solid #020B14;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff2bd6, #00E6FF);
+}
+
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes particlePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
 }
