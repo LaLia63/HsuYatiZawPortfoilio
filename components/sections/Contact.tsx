@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoSend } from "react-icons/io5";
 import toast from "react-hot-toast";
@@ -19,7 +19,7 @@ export default function Contact() {
     return () => clearInterval(interval);
   }, []);
 
-  const typeText = (text, callback) => {
+  const typeText = (text: string, callback?: () => void) => {
     let i = 0;
     setDisplayText("");
 
@@ -39,13 +39,15 @@ export default function Contact() {
     setTimeout(() => setGlitch(false), 500);
   };
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(event.target);
+      const form = event.currentTarget;
+     const formData = new FormData(form);
 
-    const email = formData.get("email");
+    const emailValue = formData.get("email");
+const email = typeof emailValue === "string" ? emailValue : "";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     if (!emailRegex.test(email)) {
@@ -73,7 +75,7 @@ export default function Contact() {
         });
 
         toast.success("Commit pushed successfully");
-        event.target.reset();
+        form.reset();
         setTimeout(() => {
           setDisplayText("");
         }, 3000);
@@ -143,7 +145,7 @@ export default function Contact() {
               MESSAGE
             </label>
             <textarea
-              rows="3"
+              rows={3}
               name="message"
               placeholder="Describe your project or question"
               required
@@ -157,15 +159,15 @@ export default function Contact() {
             <span className="text-[#00E6FF] font-bold font-mono">{">"}</span>
 
             <div className="px-5 flex gap-6 text-[#00E6FF] text-2xl">
-              <a href="https://github.com/Izzell63" target="_blank">
+              <a href="https://github.com/Izzell63" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
 
-              <a href="https://www.linkedin.com/in/lalia63" target="_blank">
+              <a href="https://www.linkedin.com/in/lalia63" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
 
-              <a href="https://x.com/HsuYatiZaw" target="_blank">
+              <a href="https://x.com/HsuYatiZaw" target="_blank" rel="noopener noreferrer">
                 <FaXTwitter className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
             </div>
