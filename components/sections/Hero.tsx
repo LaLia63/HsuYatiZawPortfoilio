@@ -78,7 +78,7 @@ export default function Hero() {
 
         <div className="flex gap-6 text-[#00E6FF]">
           <a
-            href="./file/Hsu-Yati-Zaw.pdf"
+            href="./file/HSU-YATI-ZAW.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 
                bg-[#00E6FF] text-black rounded-lg font-semibold
@@ -91,7 +91,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-6 text-[#00E6FF]">
             <a
-              href="https://github.com/Izzell63"
+              href="https://github.com/LaLia63"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition"
