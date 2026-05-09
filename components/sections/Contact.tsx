@@ -159,7 +159,7 @@ const email = typeof emailValue === "string" ? emailValue : "";
             <span className="text-[#00E6FF] font-bold font-mono">{">"}</span>
 
             <div className="px-5 flex gap-6 text-[#00E6FF] text-2xl">
-              <a href="https://github.com/Izzell63" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/LaLia63" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
 
