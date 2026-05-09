@@ -10,23 +10,23 @@ const projects = [
       "A modern café website designed to showcase a relaxing coffee experience through elegant visuals and smooth navigation. The project focuses on clean UI design, and structured sections to present the café’s menu, atmosphere, and brand identity.",
     image: "/img/cafemidori.png",
     link: "https://cafemidori.infinityfreeapp.com",
-    source: "https://github.com/Izzell63/CafeMidori.git",
+    source: "https://github.com/LaLia63/CafeMidori",
   },
   {
     title: "Pure Todo",
     description:
       "A minimalist task management web app that helps users organize daily tasks with simplicity and clarity. It allows users to quickly add, complete, and remove tasks in a distraction-free interface designed for productivity and ease of use.",
     image: "/img/puretodo.png",
-    link: "https://izzell63.github.io/todolist/",
-    source: "https://github.com/Izzell63/todolist.git",
+    link: "https://LaLia63.github.io/todolist/",
+    source: "https://github.com/LaLia63/todolist.git",
   },
   {
     title: "Sticky Notes",
     description:
       "A lightweight notes application inspired by digital sticky notes. It provides a simple workspace where users can quickly capture ideas, reminders, or thoughts, making everyday note-taking fast and intuitive.",
     image: "/img/sticky.png",
-    link: "https://izzell63.github.io/Note/",
-    source: "https://github.com/Izzell63/Note.git",
+    link: "https://LaLia63.github.io/Note/",
+    source: "https://github.com/LaLia63/Note.git",
   },
 ];
 
