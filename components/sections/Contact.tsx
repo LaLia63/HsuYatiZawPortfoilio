@@ -163,7 +163,7 @@ const email = typeof emailValue === "string" ? emailValue : "";
                 <FaGithub className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
 
-              <a href="https://www.linkedin.com/in/hsu-yati-zaw-a28463406/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/hsu-yati-zaw/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="cursor-pointer hover:scale-110 hover:drop-shadow-[0_0_10px_#00E6FF] transition" />
               </a>
 
