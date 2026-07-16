@@ -78,7 +78,7 @@ export default function Hero() {
 
         <div className="flex gap-6 text-[#00E6FF]">
           <a
-            href="./file/HSU-YATI-ZAW.pdf"
+            href="./file/HsuYatiZaw.pdf"
             download
             className="inline-flex items-center gap-2 px-6 py-3 
                bg-[#00E6FF] text-black rounded-lg font-semibold
